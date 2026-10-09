@@ -1,5 +1,17 @@
 # Capstone Assessment 2: Progress Log
 
+## Wednesday 7/Thursday 8 October
+- Done:
+  - Completion of ETL.  Encoding of text columns postponed:
+    - so data labels can be used in EDA charts
+    - as different models encode in different ways
+    - so the ETL stages show cleaning only
+- Next:
+  - Begin with encoding in modelling notebooks
+  - EDA plots and the hypothesis test
+- Stuck or unsure:
+    - Nothing
+
 ## Tuesday 6 October
 - Done:
   - Repo template cloned to `C:\Code Institute - Data Analytics\heart-failure-analysis
