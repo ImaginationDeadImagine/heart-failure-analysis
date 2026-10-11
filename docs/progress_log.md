@@ -1,5 +1,17 @@
 # Capstone Assessment 2: Progress Log
 
+## Sunday 11 October
+- Done:
+  - Finished classification: split the data into training and test sets, trained a logistic regression model, and evaluated it (accuracy 89%, recall 92%, precision 89%) (#11)
+  - Wrote up the results, including the confusion matrix, the baseline comparison and the caveats, then committed and moved card #11 to Done
+  - Set up 04_regression.ipynb to predict MaxHR, loaded the cleaned data (918 rows, 13 columns) and committed the skeleton (#12)
+- Next:
+  - Separate features and target for regression (MaxHR is the target, so it is dropped from X; HeartDisease may stay in as a feature)
+  - Encode the text columns, split into training and test sets, then fit a linear regression and judge it
+- Stuck or unsure:
+  - The roles of features and target switch between notebooks (HeartDisease was the target in classification, MaxHR is the target in regression)
+  - Needed several rounds to get the results write-up accurate
+
 ## Saturday 10 / Sunday 11 October (late evening)
 - Done:
   - Set up 03_classification.ipynb (header, kernel, directory cells, imports, data load) and committed the skeleton (#11)
