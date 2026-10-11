@@ -1,5 +1,18 @@
 # Capstone Assessment 2: Progress Log
 
+## Saturday 10 / Sunday 11 October (late evening)
+- Done:
+  - Set up 03_classification.ipynb (header, kernel, directory cells, imports, data load) and committed the skeleton (#11)
+  - Separated the features (X) from the target (y), keeping HeartDisease out of X
+  - One-hot encoded the text features into X_encoded, dropping one category per column
+  - Committed a small edit to the 02_eda notebook title
+- Next:
+  - Split the data into training and test sets
+  - Train a simple classification model (probably logistic regression) and evaluate it, focusing on recall
+- Stuck or unsure:
+  - Template notebook kept showing as modified in Git, so I checked what changed before committing
+  - Nearly encoded df instead of X, which would have leaked the target into the features
+
 ## Saturday 10 October
 - Done:
   - Split MaxHR into patients with and without heart disease (508 and 410; means 127.7 and 148.2)
