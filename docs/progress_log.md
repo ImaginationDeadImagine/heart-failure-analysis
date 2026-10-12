@@ -1,5 +1,16 @@
 # Capstone Assessment 2: Progress Log
 
+## Monday 12 October
+- Done:
+  - Finished regression: predicted MaxHR with linear regression (R-squared 0.31, average error 16.6 bpm against 21.4 for an always-the-average baseline) and wrote it up (#12)
+  - Committed and moved card #12 to Done
+- Next:
+  - Streamlit app (#14)
+  - README (#15), reflection (#16), then the final check against the handbook (#17)
+- Stuck or unsure:
+  - Working directory error after a restart, fixed by running the directory cells once each
+  - A variable accidentally overwrote the mean_absolute_error function; fixed by using different names for results
+
 ## Sunday 11 October
 - Done:
   - Finished classification: split the data into training and test sets, trained a logistic regression model, and evaluated it (accuracy 89%, recall 92%, precision 89%) (#11)
