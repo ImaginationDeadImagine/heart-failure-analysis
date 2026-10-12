@@ -1,5 +1,16 @@
 # Capstone Assessment 2: Progress Log
 
+## Monday 12 October (evening)
+- Done:
+  - Created a Streamlit app (app.py) with a title, a data table, an age histogram and an age slider that filters the chart (#14)
+  - Committed each step as a small commit
+- Next:
+  - Add a hypothesis test page and a Predict page (save the classification model to a file first)
+  - README (#15)
+- Stuck or unsure:
+  - VS Code autocomplete changed a line of code; fixed by pressing Esc before Enter
+  - Chart ignored the slider until it used the filtered data instead of the full data
+
 ## Monday 12 October
 - Done:
   - Finished regression: predicted MaxHR with linear regression (R-squared 0.31, average error 16.6 bpm against 21.4 for an always-the-average baseline) and wrote it up (#12)
