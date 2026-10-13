@@ -19,6 +19,20 @@ The Streamlit app contains a data table showing the first five rows of patient d
 
 - **Attribution notice:** Contains information from [Heart Failure Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction/), which is made available here under the [Open Data Commons Open Database License (ODbL) v1.0](https://opendatacommons.org/licenses/odbl/1-0/)
 
+
+## Hypothesis
+
+- **Null hypothesis (H0):** the average maximum heart rate is the same in both groups.
+- **Alternative hypothesis (H1):** the average maximum heart rate is different between the groups, in either direction.
+- **Significance level (α):** 0.05, chosen before the test
+- **Test:** Welch's t-test, two-tailed. It does not assume that the spread of results is the same in each group.
+
+**Result:** The mean maximum heart rate was 127.7 beats per minute for patients with heart disease (n = 508) and 148.2 beats per minute for those without (n = 410), a gap of about 20.5 beats per minute. The t-statistic was -13.2 and the p-value was <0.001.  The negative sign for the t-statistic is because the heart disease group, listed first in the test, had the lower mean.
+
+**Conclusion:** Because p < 0.001 was below the α of 0.05, I rejected the null hypothesis.  This suggests the two groups differ in their maximum heart rate on exercise, and the heart disease group's mean was lower. This shows an association, not that heart disease causes the lower rate.  Other factors such as age, medication or fitness level might explain the gap.
+
+The full test is in `02_eda.ipynb`, and the box plot in the app shows the difference.
+
 ## Credits
 
 - **Creators:**
