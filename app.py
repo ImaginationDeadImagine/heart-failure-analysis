@@ -33,3 +33,5 @@ ax.set_ylabel("Maximum heart rate (beats per minute)")
 st.pyplot(fig)
 
 st.write("The boxplot shows that the middle line of box 0 is above the top edge of box 1.  In other words, the median for patients without heart disease is above the 75th percentile for patients with heart disease.  Therefore, patients with heart disease tend to reach a lower maximum heart rate.")
+
+st.caption("Contains information from [Heart Failure Prediction Dataset] (https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction/), which is made available here under the [Open Data Commons Open Database License (ODbL) v1.0] (https://opendatacommons.org/licenses/odbl/1-0/).")
