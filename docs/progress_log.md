@@ -1,5 +1,24 @@
 # Capstone Assessment 2: Progress Log
 
+## Tuesday 13 Oct (morning)
+
+- Done:
+  - Terminal froze after overnight sleep. Fixed by deleting old terminals and opening a new one, which showed (.venv). Confirmed with git status: working tree clean.
+  - Ran the Streamlit app to check it still worked: table, age histogram and slider all fine.
+  - Added a box plot of MaxHR by heart disease status to app.py. First attempt failed (AttributeError) because I put seaborn arguments into plt.subplots(). Fixed by using plt.subplots() to make the canvas and sns.boxplot() to draw on it.
+  - Found a copy-paste error: the y-axis label said “Number of patients” when it shows MaxHR. Corrected it.
+  - Result: patients without heart disease reach higher maximum heart rates. The median line of box 0 sits above the top edge of box 1, consistent with the t-test.
+  - Committed and pushed (#14).
+- Next:
+  - Move card #14 to Done on the kanban board.
+  - Write the README (#15), one section at a time.
+  - Then, if time and energy allow: hypothesis test page in the app. Predict page is optional.
+  - Reflection (#16) and final handbook check (#17) before submitting on Wednesday.
+- Stuck or unsure:
+  - First box plot attempt failed with AttributeError: Figure.set() got an unexpected keyword argument 'data'. I had put the seaborn arguments inside plt.subplots(). Fixed by using plt.subplots() for the canvas and sns.boxplot() to draw on it.
+  - Copied the histogram’s y-axis label (“Number of patients”) onto the box plot by mistake. Spotted it on review and corrected it.
+  - Unsure how many app pages to build before the deadline. I want to do the required README first, then decide.
+
 ## Monday 12 October (evening)
 - Done:
   - Created a Streamlit app (app.py) with a title, a data table, an age histogram and an age slider that filters the chart (#14)
