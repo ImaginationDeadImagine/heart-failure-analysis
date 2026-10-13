@@ -1,5 +1,28 @@
 # Capstone Assessment 2: Progress Log
 
+## Tuesdau 13 October (afternoon/evening)
+
+- Done
+
+  - Tutor confirmed a Streamlit dashboard must be deployed. Checked the template’s deployment files (.slugignore, .python-version, Procfile, setup.sh): all suitable.
+  - Trimmed requirements.txt to the 7 packages the project uses; removed unused ones (ydata-profiling, ppscore, yellowbrick, Pillow, plotly, imbalanced-learn, xgboost, feature-engine). Added scipy==1.13.1, which notebook 02 uses directly.
+  - GitHub Student Developer Pack granted. Applied for Heroku student access.
+  - Replaced the template README with a project overview, Dataset section (source, ODbL licence, origin, cleaning of 172 Cholesterol zeros and 1 RestingBP zero) and Credits. Fixed formatting after review.
+  - Added the ODbL attribution notice to the app (st.caption) and the README.
+  - All committed and pushed; working tree clean.
+
+- Next
+
+  - Deploy to Heroku once access arrives; add the live link to the README.
+  - Remaining README sections: hypothesis, project plan, analysis techniques, ethics, dashboard design, limitations, libraries, sources and help.
+  - Reflection (#16) and final handbook check (#17). Submit by lunchtime Wed.
+
+- Stuck or unsure
+
+  - Heroku access pending. If it hasn’t arrived by the morning, the fallback is Render (the tutor says any platform is acceptable).
+  - Unsure whether publishing the data files in a public repo needs further ODbL steps. May ask the tutor.
+  - Dropped the extra app pages (hypothesis test, Predict) to protect time for the required deployment and write-up.
+
 ## Tuesday 13 Oct (morning)
 
 - Done:
