@@ -23,3 +23,13 @@ st.pyplot(fig)
 
 st.write("The plot shows all patients in the selected age range.")
 st.write("Number of patients in the chart:", len(filtered))
+
+st.subheader("Maximum Heart Rate by Heart Disease Category")
+fig, ax = plt.subplots()
+sns.boxplot(data=df, x="HeartDisease", y="MaxHR", ax=ax)
+ax.set_title("Maximum Heart Rate by Heart Disease Category")
+ax.set_xlabel("Heart Disease Category (0 = No heart disease, 1 = Heart disease)")
+ax.set_ylabel("Maximum heart rate (beats per minute)")
+st.pyplot(fig)
+
+st.write("The boxplot shows that the middle line of box 0 is above the top edge of box 1.  In other words, the median for patients without heart disease is above the 75th percentile for patients with heart disease.  Therefore, patients with heart disease tend to reach a lower maximum heart rate.")
