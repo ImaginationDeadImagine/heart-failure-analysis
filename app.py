@@ -3,12 +3,15 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-st.title("Heart Disease Prediction")
-st.write("Prediction of heart disease, and maximum heart rate on exercise")
+st.title("Heart Disease and Relation to Maximum Heart Rate")
+st.write("Exploring heart disease and maximum heart rate on exercise")
+
+st.write("The question the app explores is whether there is a difference in average maximum heart rate on exercise between groups of patients with or without heart disease.")
 
 df = pd.read_csv("data/processed/heart_clean.csv")
 st.dataframe(df.head())
 st.subheader("Age distribution")
+
 
 # slider
 low, high = st.slider("Age range", int(df["Age"].min()), int(df["Age"].max()), (int(df["Age"].min()), int(df["Age"].max())))
