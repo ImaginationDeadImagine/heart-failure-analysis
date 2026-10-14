@@ -73,6 +73,23 @@ The original plan is in `docs/kanban_plan.md`. Progress was tracked on the [GitH
 
 **Cautions:** This project is a learning exercise and not a diagnostic tool. The results show associations in one pooled dataset and should not be used for clinical decisions.
 
+## Dashboard Design and Deployment
+
+**Design.** The app is a single Streamlit page that follows the project's question: how does maximum heart rate relate to heart disease? It contains:
+
+- a data table showing the first five rows, so users can see what the data looks like
+- an interactive histogram with an age slider, so users can explore how the age range changes the picture
+- a box plot of maximum heart rate by heart disease category, which shows the difference tested in the hypothesis test
+- an attribution notice for the dataset licence
+
+**Deployment.** The app is deployed on Render's free tier from this repository. Render installs the packages listed in `requirements.txt` and starts the app with:
+
+`streamlit run app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true`
+
+I first tried Heroku, but its student credits step failed at account activation, so the Heroku files in the repository (`Procfile`, `setup.sh`, `.slugignore`) are not used by the Render deployment. The `pyarrow` version is pinned in `requirements.txt` for compatibility with NumPy 1.26.
+
+**Libraries.** pandas and NumPy (data handling), matplotlib and seaborn (charts), SciPy (t-test), scikit-learn (logistic and linear regression), Streamlit (the app), and pyarrow (pinned for compatibility).
+
 ## Credits
 
 - **Creators:**
