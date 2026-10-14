@@ -41,19 +41,19 @@ The Streamlit app contains a data table showing the first five rows of patient d
 
 The full test is in `02_eda.ipynb`, and the box plot in the app shows the difference.
 
-## Project Plan
-
-The original plan is in docs/kanban_plan.md.  Progress was tracked on the [`GitHub Project board`](https://github.com/users/ImaginationDeadImagine/projects/8/views/1).  I dropped clustering to protect time for the write-up and for checking the finished project.  Classification and regression already covered the machine learning requirement.
-
-With more time I would have liked to investigate whether k-means could identify clusters, solely within the heart disease patients, with the features scaled first.  I would be particularly interested to see how any clusters identified mapped to `RestingECG` categories.
-
 ## Methods and Justification
 
 **Welch's t-test.** I wanted to know whether the average maximum heart rate differs between patients with and without heart disease. MaxHR is a numeric measurement and there are two independent groups, so comparing their means with a t-test is appropriate.  A t-test gives a p-value, which measures how likely a difference this large would be if both groups really came from the same population, so it goes beyond judging the box plots by eye. I used Welch’s version because it does not assume the two groups have equal spread.
 
+Alternatives include Student’s t-test, which assumes equal spread, and the Mann-Whitney U test, which does not assume the data are normally distributed. With 508 and 410 patients in the groups, the t-test is a reasonable choice.
+
 **Logistic regression (classifying heart disease).** `HeartDisease` is a category (0 or 1). Logistic regression is designed for this: its S-shaped curve keeps every prediction between 0 and 1, so the output can be read as the probability of heart disease. Values above 0.5 are classified as heart disease and values below as no heart disease. A straight-line model could predict values below 0 or above 1, which have no meaning for a yes/no outcome.
 
+A decision tree or random forest could also classify heart disease and may capture more complex patterns, but logistic regression is simpler to interpret and gives probabilities, which suited a learning project.
+
 **Linear regression (predicting maximum heart rate).** `MaxHR` is a number on a scale, which linear regression is designed to predict. It is simple and easy to interpret, and it gives a clear baseline to compare against.
+
+The modest R² suggests the relationships may not be purely linear, so a tree-based model is an alternative I did not try.
 
 ## Project Plan
 
@@ -90,14 +90,26 @@ I first tried Heroku, but its student credits step failed at account activation,
 
 **Libraries.** pandas and NumPy (data handling), matplotlib and seaborn (charts), SciPy (t-test), scikit-learn (logistic and linear regression), Streamlit (the app), and pyarrow (pinned for compatibility).
 
-## Credits
+## Reflection
 
-- **Creators:**
-  - Hungarian Institute of Cardiology. Budapest: Andras Janosi, M.D.
-  - University Hospital, Zurich, Switzerland: William Steinbrunn, M.D.
-  - University Hospital, Basel, Switzerland: Matthias Pfisterer, M.D.
-  - V.A. Medical Center, Long Beach and Cleveland Clinic Foundation: Robert Detrano, M.D., Ph.D.
-- **Donor:** David W. Aha
+**Challenges:**
+I was initially going to deploy on Heroku as recommended by Code Institute but fell at the last hurdle.  Heroku accepted that I was on the GitHub Student Developer Pack but failed to add credits to my registered account.
+
+I researched other alternatives and selected [Render](https://www.render.com) because it had a free tier.  I checked with a tutor that deploying on Render was acceptable and proceeded with deployment.  For the most part this was straightforward.  Render linked to GitHub and could access my repo, but I had to rely on Claude to build the command that starts the app.  Render's logs showed a NumPy/pyarrow version clash which I fixed by pinning a compatible version.
+
+Statistics concepts (t-test, p-value, R², recall) were very difficult for me to grasp.  I had done statistics involving these concepts in the distant past but, rather than this being a refresher, I was once again pitted against my ignorance and confusion.  Claude prodded and poked me time after time to put explanations of concepts in my own words until they were acceptable, but I think my foundations are quite shaky and require a lot more work.  By the end I had a clearer picture of my limitations (the concepts are still hazy) and of where to concentrate my further learning. What did change is that I could explain the t-test, p-value, R² and recall with support well enough to use them in the Hypothesis, Methods and Limitations sections.
+
+Working in the terminal was confusing, particularly developing a disciplined approach to making commits.  Claude helped by suggesting it was time to commit after a block of work.  Working with git was daunting at first but became mechanical the more I did it.
+
+**New tools:** I used a number of tools and techniques that I had not used before, such as Streamlit, Render and git commits tied to issues on the Kanban board.  For Streamlit I familiarised myself with basic usage with YouTube videos.  Render was fairly straightforward to set up because of its linkage to GitHub.  The Kanban board became a source of comfort as tasks were finished and moved to Done.
+
+**Future work:** I will be more confident about using a progress log as a record of work completed and issues encountered, along with where I might require help or am stuck.
+
+I will investigate using Streamlit more.  I enjoyed how easy it was to get an app up and running.  I will investigate its limitations though, as I understand it has limits for production use, so I will investigate where it suits and where it does not.
+
+I will focus some of my learning on statistical foundations and sharpen my understanding of basic concepts.  I am sure it will find broad applicability in analysing datasets in the future.
+
+I have learned that working with AI is a powerful production technique.  I feel that the project would have been impossible without it in the time available.  I also feel I have only just scratched the surface of its capabilities.  I will look into this further too.
 
 ## Limitations
 
@@ -109,4 +121,14 @@ Of the 918 patients in the dataset, 734 were assigned to the training set and 18
 
 The MAE is 16.6 beats per minute (bpm) which is the average gap between predicted and measured maximum heart rate (`MaxHR`).  The baseline is 21.4 bpm from predicting the same average for everyone.  All figures are test-set figures.  Although the model improves on the baseline, with a fall of about 22%, it is arguably not a large improvement.
 
-**Pooled hospitals:** The dataset was compiled from studies carried out at several hospitals in different countries.  When the model meets a patient from a hospital or population it has never seen it may perform less well.  The training data is limited in extent and may not transfer to standard hospitals versus those carrying out research (which may be better resourced 'tertiary' hospitals).  The incidence and severity of heart disease may also vary across regions, and by population demographics such as socioeconomic class.  There is no column in the dataset marking the patients from different hospitals, so it is not possible to check whether the model performs better at some hospitals than others.
+**Pooled hospitals:** The dataset was compiled from studies carried out at several hospitals in different countries.  When the model meets a patient from a hospital or population it has never seen, it may perform less well.  The training data is limited in extent and may not transfer to standard hospitals versus those carrying out research (which may be better resourced 'tertiary' hospitals).  The incidence and severity of heart disease may also vary across regions, and by population demographics such as socioeconomic class.  There is no column in the dataset marking the patients from different hospitals, so it is not possible to check whether the model performs better at some hospitals than others.
+
+## Credits
+
+- **Creators:**
+  - Hungarian Institute of Cardiology. Budapest: Andras Janosi, M.D.
+  - University Hospital, Zurich, Switzerland: William Steinbrunn, M.D.
+  - University Hospital, Basel, Switzerland: Matthias Pfisterer, M.D.
+  - V.A. Medical Center, Long Beach and Cleveland Clinic Foundation: Robert Detrano, M.D., Ph.D.
+- **Donor:** David W. Aha
+
