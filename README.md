@@ -47,7 +47,13 @@ The original plan is in docs/kanban_plan.md.  Progress was tracked on the [`GitH
 
 With more time I would have liked to investigate whether k-means could identify clusters, solely within the heart disease patients, with the features scaled first.  I would be particularly interested to see how any clusters identified mapped to `RestingECG` categories.
 
+## Methods and Justification
 
+**Welch's t-test.** I wanted to know whether the average maximum heart rate differs between patients with and without heart disease. MaxHR is a numeric measurement and there are two independent groups, so comparing their means with a t-test is appropriate.  A t-test gives a p-value, which measures how likely a difference this large would be if both groups really came from the same population, so it goes beyond judging the box plots by eye. I used Welch’s version because it does not assume the two groups have equal spread.
+
+**Logistic regression (classifying heart disease).** `HeartDisease` is a category (0 or 1). Logistic regression is designed for this: its S-shaped curve keeps every prediction between 0 and 1, so the output can be read as the probability of heart disease. Values above 0.5 are classified as heart disease and values below as no heart disease. A straight-line model could predict values below 0 or above 1, which have no meaning for a yes/no outcome.
+
+**Linear regression (predicting maximum heart rate).** `MaxHR` is a number on a scale, which linear regression is designed to predict. It is simple and easy to interpret, and it gives a clear baseline to compare against.
 
 ## Project Plan
 
