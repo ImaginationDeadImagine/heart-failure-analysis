@@ -1,6 +1,24 @@
 # Capstone Assessment 2: Progress Log
 
-## Tuesdau 13 October (afternoon/evening)
+## Wednesday 14 October
+
+**Done**
+- Pinned `pyarrow` to fix the NumPy clash on Render; the app is now live on Render (#19)
+- Removed the duplicate box plot title from the app
+- Added the live app link to the README
+- Completed the README: Project Plan, Methods and Justification (with alternatives), Ethics and Use of AI, Dashboard Design and Deployment, Limitations, Reflection
+
+**Next**
+- Submit the project
+- Remove the duplicate Project Plan heading in the README
+- Add a core statistics concepts section to the EDA notebook (mean, median, standard deviation, basic probability) if time allows
+
+**Stuck or unsure**
+- Notebook may only partly meet criterion 1.1 (basic probability and how the principles are foundational to data analysis)
+- Statistics foundations are still hazy and need more practice
+- Whether publishing the data files needs any further ODbL steps
+
+## Tuesday 13 October (afternoon/evening)
 
 - Done
 
