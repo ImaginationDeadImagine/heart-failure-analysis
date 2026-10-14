@@ -1,8 +1,10 @@
 # Heart Failure Analysis
 
+## Overview
+
 This project takes data from studies of 918 patients with and without a heart disease diagnosis, and uses it to investigate differences between patient groups with respect to heart disease diagnosis and maximal heart rate on exercise.  Two machine learning models were used: logistic regression to classify heart disease, and linear regression to predict maximum heart rate.
 
-The project might be useful to beginner data analysts who want to see how to analyse group averages with a t-test, as detailed in the notebooks, and to visualise data in Streamlit with boxplots, as shown in the app.  The project shows how to incorporate a slider into the workflow to make a chart interactive.
+The project might be useful to beginner data analysts who want to see how to analyse group averages with a t-test, as detailed in the notebooks, and to visualise data in Streamlit with a boxplot and a histogram, as shown in the app.  The project shows how to incorporate a slider into the workflow to make a chart interactive.
 
 The Streamlit app contains a data table showing the first five rows of patient data, an interactive histogram and a boxplot.  The histogram lets the user interact with it by limiting the upper and lower age bounds of the patients in the histogram using a slider widget.
 
@@ -38,6 +40,24 @@ The Streamlit app contains a data table showing the first five rows of patient d
 **Conclusion:** Because p < 0.001 was below the α of 0.05, I rejected the null hypothesis.  This suggests the two groups differ in their maximum heart rate on exercise, and the heart disease group's mean was lower. This shows an association, not that heart disease causes the lower rate.  Other factors such as age, medication or fitness level might explain the gap.
 
 The full test is in `02_eda.ipynb`, and the box plot in the app shows the difference.
+
+## Project Plan
+
+The original plan is in docs/kanban_plan.md.  Progress was tracked on the [`GitHub Project board`](https://github.com/users/ImaginationDeadImagine/projects/8/views/1).  I dropped clustering to protect time for the write-up and for checking the finished project.  Classification and regression already covered the machine learning requirement.
+
+With more time I would have liked to investigate whether k-means could identify clusters, solely within the heart disease patients, with the features scaled first.  I would be particularly interested to see how any clusters identified mapped to `RestingECG` categories.
+
+
+
+## Project Plan
+
+The original plan is in `docs/kanban_plan.md`. Progress was tracked on the [GitHub Project board](https://github.com/users/ImaginationDeadImagine/projects/8/views/1).
+
+**Changes to the plan**
+
+- **Clustering was dropped:** To protect time for the write-up and for checking the finished project, clustering was dropped.  Classification and regression already covered the machine learning requirement. With more time, I would have used k-means (with the features scaled first) to look for clusters within the heart disease patients, and then compared those clusters with the `RestingECG` categories.
+- **Extra app pages were dropped:** Hypothesis and Predict pages were dropped.  Again, this was to protect time for the write-up and for checking the finished project.  The final app is a single page.
+- **Deployment moved from Heroku to Render:** The Heroku student credits step failed at account activation, so I deployed to Render, which the tutor confirmed was acceptable.
 
 ## Credits
 
