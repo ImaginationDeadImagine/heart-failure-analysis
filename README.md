@@ -8,7 +8,7 @@ The Streamlit app contains a data table showing the first five rows of patient d
 
 ## Live Dashboard
 
-🔗 [View the deployed Streamlit app](https://your-app-name.onrender.com)
+🔗 [View the deployed Streamlit app](https://heart-failure-analysis.onrender.com)
 
 *Note: this app is hosted on Render's free tier. If it has been idle for 15 minutes, it can take about a minute to wake up.*
 
