@@ -50,3 +50,12 @@ The full test is in `02_eda.ipynb`, and the box plot in the app shows the differ
 
 ## Limitations
 
+Of the 918 patients in the dataset, 734 were assigned to the training set and 184 to the test set.  A test set of 184 patients is small.
+
+**Classification:** The logistic regression model achieved an accuracy of 0.891 and a recall of 0.922 on a single held-out test set of 184 patients. A different split could give somewhat different scores, so these figures are estimates, not guarantees. A recall of 0.922 also means roughly 8 in 100 patients with heart disease would be missed, which matters in a medical setting. Cross-validation would give a more reliable estimate and is a possible improvement.
+
+**Regression:** On the test set the regression model had an $R^2$ ≈ 0.31. This means the model explains about 31% of the variation in measured maximum heart rate.  This leaves about 69% of the variation not captured by the model.
+
+The MAE is 16.6 beats per minute (bpm) which is the average gap between predicted and measured maximum heart rate (`MaxHR`).  The baseline is 21.4 bpm from predicting the same average for everyone.  All figures are test-set figures.  Although the model improves on the baseline, with a fall of about 22%, it is arguably not a large improvement.
+
+**Pooled hospitals:** The dataset was compiled from studies carried out at several hospitals in different countries.  When the model meets a patient from a hospital or population it has never seen it may perform less well.  The training data is limited in extent and may not transfer to standard hospitals versus those carrying out research (which may be better resourced 'tertiary' hospitals).  The incidence and severity of heart disease may also vary across regions, and by population demographics such as socioeconomic class.  There is no column in the dataset marking the patients from different hospitals, so it is not possible to check whether the model performs better at some hospitals than others.
