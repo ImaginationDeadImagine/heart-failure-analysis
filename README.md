@@ -65,6 +65,14 @@ The original plan is in `docs/kanban_plan.md`. Progress was tracked on the [GitH
 - **Extra app pages were dropped:** Hypothesis and Predict pages were dropped.  Again, this was to protect time for the write-up and for checking the finished project.  The final app is a single page.
 - **Deployment moved from Heroku to Render:** The Heroku student credits step failed at account activation, so I deployed to Render, which the tutor confirmed was acceptable.
 
+## Ethics and Use of AI
+
+**Privacy:** The dataset contains no direct identifiers such as names or hospital numbers, and it is a public release under the ODbL licence. The remaining columns (for example age, sex and resting ECG) describe measurements, not identities. The raw file is kept unchanged in `data/raw/`.
+
+**Use of AI:** I used Claude (Anthropic) throughout the project as a tutor. It explained concepts, helped plan the work from the assessment handbook, reviewed my wording and helped me find errors in my code and writing. For code, Claude gave worked examples using other columns or tables as patterns, and I wrote, adapted, ran and tested the code for this project's data. Some README wording was drafted or revised with Claude, and I edited it and checked every figure against my notebooks. The analysis choices, the results and the final text are my responsibility.
+
+**Cautions:** This project is a learning exercise and not a diagnostic tool. The results show associations in one pooled dataset and should not be used for clinical decisions.
+
 ## Credits
 
 - **Creators:**
