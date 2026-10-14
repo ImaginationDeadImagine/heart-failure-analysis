@@ -6,6 +6,12 @@ The project might be useful to beginner data analysts who want to see how to ana
 
 The Streamlit app contains a data table showing the first five rows of patient data, an interactive histogram and a boxplot.  The histogram lets the user interact with it by limiting the upper and lower age bounds of the patients in the histogram using a slider widget.
 
+## Live Dashboard
+
+🔗 [View the deployed Streamlit app](https://your-app-name.onrender.com)
+
+*Note: this app is hosted on Render's free tier. If it has been idle for 15 minutes, it can take about a minute to wake up.*
+
 ## Dataset
 
 - **Source:** Heart Failure Prediction Dataset by fedesoriano on Kaggle (https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction/)
